@@ -114,7 +114,10 @@ public class ActorProvider : BaseProvider, IRemoteMetadataProvider<Person, Perso
             ("カップサイズ", a.CupSize),
             ("身長", a.Height > 0 ? $"{a.Height}cm" : string.Empty),
             ("血液型", !string.IsNullOrWhiteSpace(a.BloodType) ? $"{a.BloodType}型" : string.Empty),
-            ("デビュー", a.DebutDate.GetValidDateTime()?.ToString("yyyy年M月d日"))
+            ("デビュー", a.DebutDate.GetValidDateTime()?.ToString("yyyy年M月d日")),
+            ("簡介", a.Summary),
+            ("爱好", a.Hobby),
+            ("特长", a.Skill)
         };
 
         return string.Join("\n<br>\n",
